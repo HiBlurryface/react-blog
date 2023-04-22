@@ -7,6 +7,7 @@ import styles from 'assets/styles/Main.module.scss'
 import 'assets/styles/reset.scss'
 import 'assets/styles/fonts.scss'
 import ScrollToTop from 'utils/scrollToTop';
+import PageNotFound from 'pages/PageNotFount';
 
 function App() {
   return <div className={styles.wrapper}>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Blogs />} />
             <Route path="blog/:id" element={<Blog />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
         </Route>
       </Routes>

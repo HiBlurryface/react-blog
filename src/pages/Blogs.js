@@ -1,5 +1,6 @@
 import styles from 'assets/styles/Blogs.module.scss'
 import main from 'assets/styles/Main.module.scss'
+import Button from 'components/UI/button/Button'
 import Title from 'components/simple/title/Title'
 import Blog from 'components/smart/blog/Blog'
 
@@ -33,7 +34,7 @@ function Blogs() {
 
     return <>
         <header className={main.header}>
-            <button className={main.header__button}>Create blog</button>
+            <Button>Create blog</Button>
         </header>
         <main className={main.body}>
             <Title>Blogs</Title>
