@@ -1,0 +1,14 @@
+.container {
+    margin-top: 40px;
+    @media (max-width: 425px) {
+        margin-top: 20px;
+    }
+    & > div {
+        &:not(:last-child) {
+            margin-bottom: 48px;
+            @media (max-width: 768px) {
+                margin-bottom: 32px;
+            } 
+        }
+    }
+}

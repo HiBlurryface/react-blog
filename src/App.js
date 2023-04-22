@@ -1,5 +1,27 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Blogs from 'pages/Blogs';
+import Layout from 'pages/Layout';
+import Blog from 'pages/Blog';
+
+import styles from 'assets/styles/Main.module.scss'
+import 'assets/styles/reset.scss'
+import 'assets/styles/fonts.scss'
+import ScrollToTop from 'utils/scrollToTop';
+
 function App() {
-  return 
+  return <div className={styles.wrapper}>
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Blogs />} />
+            <Route path="blog/:id" element={<Blog />} />
+          </Route>
+        </Route>
+      </Routes>
+    </Router>
+  </div>
 }
 
 export default App;
