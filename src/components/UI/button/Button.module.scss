@@ -1,11 +1,9 @@
-.style {
+.button {
+    background-color: #21243D;
+    color: #fff;
     font-weight: 500;
     font-size: 20px;
     line-height: 29px;
-    color: #21243D;
-    background: transparent;
-
-    &:hover {
-        color: #FF6464;
-    }
+    padding: 12px 20px;
+    text-transform: uppercase;
 }

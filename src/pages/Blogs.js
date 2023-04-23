@@ -1,6 +1,6 @@
 import styles from 'assets/styles/Blogs.module.scss'
 import main from 'assets/styles/Main.module.scss'
-import Button from 'components/UI/button/Button'
+import ButtonTransparent from 'components/UI/buttonTransparent/ButtonTransparent'
 import Title from 'components/simple/title/Title'
 import Blog from 'components/smart/blog/Blog'
 
@@ -8,7 +8,7 @@ function Blogs({data}) {
 
     return <>
         <header className={main.header}>
-            <Button>Create blog</Button>
+            <ButtonTransparent>Create blog</ButtonTransparent>
         </header>
         <main className={main.body}>
             <Title>Blogs</Title>
