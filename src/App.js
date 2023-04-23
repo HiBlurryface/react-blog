@@ -8,6 +8,7 @@ import 'assets/styles/reset.scss'
 import 'assets/styles/fonts.scss'
 import ScrollToTop from 'utils/scrollToTop';
 import PageNotFound from 'pages/PageNotFount';
+import CreateBlog from 'pages/CreateBlog';
 
 function App() {
   const data = [
@@ -52,6 +53,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Blogs data={data} />} />
             <Route path="blog/:id" element={<Blog data={data} />} />
+            <Route path="create-blog" element={<CreateBlog />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Route>

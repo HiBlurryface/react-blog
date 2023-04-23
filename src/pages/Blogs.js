@@ -3,12 +3,13 @@ import main from 'assets/styles/Main.module.scss'
 import ButtonTransparent from 'components/UI/buttonTransparent/ButtonTransparent'
 import Title from 'components/simple/title/Title'
 import Blog from 'components/smart/blog/Blog'
+import { useNavigate } from 'react-router-dom'
 
 function Blogs({data}) {
-
+    const navigate = useNavigate()
     return <>
         <header className={main.header}>
-            <ButtonTransparent>Create blog</ButtonTransparent>
+            <ButtonTransparent onClick={()=> navigate('/create-blog')}>Create blog</ButtonTransparent>
         </header>
         <main className={main.body}>
             <Title>Blogs</Title>

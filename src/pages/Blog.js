@@ -8,6 +8,7 @@ import Input from "components/UI/input/Input";
 import TextArea from "components/UI/textArea/TextArea"
 import Button from "components/UI/button/Button";
 import ButtonTransparent from "components/UI/buttonTransparent/ButtonTransparent";
+import Subtitle from "components/simple/subtitle/Subtitle";
 
 function Blog({ data }) {
     const params = useParams()
@@ -55,7 +56,7 @@ function Blog({ data }) {
                     </div>
                     <div className={styles.comments}>
                         <div className={styles.comments__wrapper}>
-                            <h2 className={styles.comments__title}>Comments</h2>
+                            <Subtitle>Your comment</Subtitle>
                             <div className={styles.comment}>
                                 <img src="" alt="" className={styles.comment__photo} />
                                 <div className={styles.comment__info}>
@@ -78,14 +79,14 @@ function Blog({ data }) {
                             </div>
                         </div>
                         <div className={styles.comment__wrapper}>
-                            <h2 className={styles.comments__title}>Your comment</h2>
+                            <Subtitle>Your comment</Subtitle>
                             <form action="" className={styles.comments__form}>
                                 <div className={styles.comments__group}>
-                                    <Input placeholder="Your Name" required=""/>
-                                    <Input placeholder="Your Email" required=""/>
+                                    <Input placeholder="Your Name" required="" />
+                                    <Input placeholder="Your Email" required="" />
                                 </div>
-                                <Input placeholder="Subject" required=""/>
-                                <TextArea placeholder="Your comment" required=""/>
+                                <Input placeholder="Subject" required="" />
+                                <TextArea placeholder="Your comment" required="" />
                                 <Button type="submit">Add comment</Button>
                             </form>
                         </div>
