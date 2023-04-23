@@ -2,6 +2,14 @@ import { NavLink } from 'react-router-dom'
 import styles from './Blog.module.scss'
 
 function Blog({ data }) {
+    function toElipsis(str) {
+        let trimmedStr = str.substr(0, 260);
+        if (str.length >= 260) {
+            return trimmedStr += '...';
+        }
+        return trimmedStr;
+    }
+
     return <div className={styles.wrapper}>
         <div className={styles.img}>
             <img src="" alt="" className={styles.pic} />
@@ -18,7 +26,7 @@ function Blog({ data }) {
                     })}
                 </ul>
             </div>
-            <p className={styles.subtitle}>{data.descr.substr(0, 260)}...</p>
+            <p className={styles.subtitle}>{toElipsis(data.subtitle)}</p>
         </div>
     </div>
 }

@@ -4,33 +4,7 @@ import Button from 'components/UI/button/Button'
 import Title from 'components/simple/title/Title'
 import Blog from 'components/smart/blog/Blog'
 
-function Blogs() {
-    const data = [
-        {
-            id: '1',
-            title: 'Test',
-            date: '20 Mar 2003',
-            descr: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-            img: '',
-            tags: ['Tag', 'Test']
-        },
-        {
-            id: '2',
-            title: 'Test',
-            date: '20 Mar 2003',
-            descr: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-            img: '',
-            tags: ['Tag', 'Test', 'Test', 'Test', 'Test',]
-        },
-        {
-            id: '3',
-            title: 'Test',
-            date: '20 Mar 2003',
-            descr: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-            img: '',
-            tags: ['Tag', 'Test']
-        },
-    ]
+function Blogs({data}) {
 
     return <>
         <header className={main.header}>

@@ -21,8 +21,8 @@ function Footer() {
 
     return <footer className={styles.wrapper}>
         <div className={styles.container}>
-            {social.map(item => {
-                return <a href={item.link} className={styles.link}>
+            {social.map((item, index) => {
+                return <a href={item.link} className={styles.link} key={index}>
                     <img src={item.icon} alt="" className={styles.icon} />
                 </a>
             })}
