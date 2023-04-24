@@ -12,7 +12,7 @@ function Blog({ data }) {
 
     return <div className={styles.wrapper}>
         <div className={styles.img}>
-            <img src="" alt="" className={styles.pic} />
+            <img src={data.preview} alt="" className={styles.pic} />
         </div>
         <div className={styles.info}>
             <NavLink to={`/blog/${data.id}`} className={styles.title}>{data.title}</NavLink>

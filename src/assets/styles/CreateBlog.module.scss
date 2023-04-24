@@ -1,3 +1,38 @@
 .container {
     margin-top: 40px;
 }
+
+.preview {
+    margin: 30px 0;
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    background: #f1f1f1;
+}
+
+.block {
+    margin-bottom: 30px;
+    &__header {
+        position: relative;
+    }
+
+    &__img {
+        width: 500px;
+        height: 300px;
+        object-fit: cover;
+        background: #f1f1f1;
+        margin: 30px 0;
+    }
+}
+
+.delete {
+    background: transparent;
+    position: absolute;
+    top: 5px;
+    right: 0;
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+    }
+}

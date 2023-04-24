@@ -2,23 +2,32 @@ import Title from "components/simple/title/Title"
 import main from 'assets/styles/Main.module.scss';
 import styles from 'assets/styles/Blog.module.scss';
 import ButtonBack from "components/UI/buttonBack/ButtonBack";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import PageNotFound from "./PageNotFount";
 import Input from "components/UI/input/Input";
 import TextArea from "components/UI/textArea/TextArea"
 import Button from "components/UI/button/Button";
 import ButtonTransparent from "components/UI/buttonTransparent/ButtonTransparent";
 import Subtitle from "components/simple/subtitle/Subtitle";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteBlogAction } from "store/blogsReducer";
 
-function Blog({ data }) {
+function Blog() {
     const params = useParams()
-    const blog = data.find(item => item.id === params.id)
-
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const blogs = useSelector(state => state.blogs)
+    const blog = blogs.filter(item => item.id === params.id)[0]
+    
+    function deleteBlog() {
+        dispatch(deleteBlogAction(blog.id));
+        navigate('/');
+    }
     return blog === undefined
         ? <PageNotFound />
         : <>
             <header className={main.header}>
-                <ButtonTransparent>Delete blog</ButtonTransparent>
+                <ButtonTransparent onClick={()=> deleteBlog()}>Delete blog</ButtonTransparent>
                 <ButtonTransparent>Edit blog</ButtonTransparent>
                 <ButtonBack />
             </header>
@@ -37,7 +46,9 @@ function Blog({ data }) {
                             </ul>
                         </div>
                         <p className={styles.header__subtitle}>{blog.subtitle}</p>
-                        <img src="" alt="" className={styles.header__photo} />
+                        <div className={styles.header__img}>
+                            <img src={blog.preview} alt="" className={styles.header__photo} />
+                        </div>
                     </div>
                     <div className={styles.content}>
                         {blog.descr && <div className={styles.content__text}>
@@ -50,7 +61,9 @@ function Blog({ data }) {
                         </div>}
                         {blog.images && <div className={styles.content__images}>
                             {blog.images.map((item, index) => {
-                                return <img src="" alt="" className={styles.block__img} key={index} />
+                                return <div className={styles.block__img} key={index}>
+                                    <img src={item.photo} alt="" className={styles.block__pic} />
+                                </div>
                             })}
                         </div>}
                     </div>
@@ -58,7 +71,7 @@ function Blog({ data }) {
                         <div className={styles.comments__wrapper}>
                             <Subtitle>Your comment</Subtitle>
                             <div className={styles.comment}>
-                                <img src="" alt="" className={styles.comment__photo} />
+                                <img src={blog.preview} alt="" className={styles.comment__photo} />
                                 <div className={styles.comment__info}>
                                     <div className={styles.comment__group}>
                                         <h3 className={styles.comment__title}>Hiblurryface</h3>
