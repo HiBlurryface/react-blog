@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom'
-import styles from './Blog.module.scss'
+import { NavLink } from 'react-router-dom';
+import styles from './Blog.module.scss';
+import camera from 'assets/images/camera.png'
 
 function Blog({ data }) {
     function toElipsis(str) {
@@ -12,7 +13,10 @@ function Blog({ data }) {
 
     return <div className={styles.wrapper}>
         <div className={styles.img}>
-            <img src={data.preview} alt="" className={styles.pic} />
+            {data.preview
+                ? <img src={data.preview} alt="" className={styles.pic} />
+                : <img src={camera} alt="" className={styles.icon} />
+            }
         </div>
         <div className={styles.info}>
             <NavLink to={`/blog/${data.id}`} className={styles.title}>{data.title}</NavLink>

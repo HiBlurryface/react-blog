@@ -13,6 +13,9 @@ import { useDispatch } from "react-redux";
 import { addBlogAction } from "store/blogsReducer";
 import { v4 as uuidv4 } from 'uuid';
 import deleteIcon from 'assets/images/deleteIcon.svg'
+import UploadFile from "components/UI/uploadFile/UploadFile";
+import Preview from "components/UI/preview/Preview";
+
 uuidv4()
 function CreateBlog() {
     const dispatch = useDispatch()
@@ -20,6 +23,7 @@ function CreateBlog() {
     const fileReader = new FileReader();
 
     const [title, setTitle] = useState('');
+    const [titleValidation, setTitleValidation] = useState(false)
     const [subtitle, setSubtitle] = useState('');
     const [tags, setTags] = useState('');
     const [preview, setPreview] = useState('');
@@ -56,17 +60,21 @@ function CreateBlog() {
         fileReader.readAsDataURL(file);
     }
     function addBlog() {
-        dispatch(addBlogAction({
-            id: uuidv4(),
-            date: getCurrentDate(),
-            title: title,
-            subtitle: subtitle,
-            tags: getTags(),
-            descr: descr,
-            preview: preview,
-            images: images
-        }))
-        navigate('/')
+        if(title.length === 0) {
+            setTitleValidation(true)
+        } else {
+            dispatch(addBlogAction({
+                id: uuidv4(),
+                date: getCurrentDate(),
+                title: title,
+                subtitle: subtitle,
+                tags: getTags(),
+                descr: descr,
+                preview: preview,
+                images: images
+            }))
+            navigate('/')
+        }
     }
 
     return <>
@@ -77,11 +85,13 @@ function CreateBlog() {
         <main className={main.body}>
             <Title>Create blog</Title>
             <div className={styles.container}>
-                <form>
-                    <input type="file" accept="image/png,image/jpeg" onChange={getPreview} />
-                </form>
-                <img src={preview} alt="" className={styles.preview} />
-                <Input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
+                <UploadFile accept="image/png,image/jpeg" name="preview" id="preview" onChange={getPreview}>
+                    Choose preview
+                </UploadFile>
+                <div className={styles.preview}>
+                    <Preview src={preview} alt="preview" />
+                </div>
+                <Input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} validation={titleValidation} message='* Required field'/>
                 <Input placeholder="Tags" value={tags} onChange={e => setTags(e.target.value)} />
                 <Input placeholder="Subtitle" value={subtitle} onChange={e => setSubtitle(e.target.value)} />
                 <div className={styles.block}>
@@ -111,10 +121,12 @@ function CreateBlog() {
                                     <img src={deleteIcon} alt="" className={styles.delete__icon} />
                                 </button>
                             </div>
-                            <form>
-                                <input type="file" accept="image/png,image/jpeg" className={styles.block__photo} onChange={e=>addPhoto(e, img)} />
-                            </form>
-                            <img src={img.photo} alt="" className={styles.block__img} />
+                            <UploadFile accept="image/png,image/jpeg" name={`photo-${index + 1}`} id={`photo-${index + 1}`} onChange={e => addPhoto(e, img)}>
+                                Choose {index + 1} photo
+                            </UploadFile>
+                            <div className={styles.block__img}>
+                                <Preview src={img.photo} alt={`photo-${index + 1}`} />
+                            </div>
                         </div>
                     })}
                     <ButtonTransparent onClick={() => setImages([...images, { id: uuidv4(), photo: '' }])}>Add photo +</ButtonTransparent>
