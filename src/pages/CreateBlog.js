@@ -15,7 +15,7 @@ import { v4 as uuidv4 } from 'uuid';
 import deleteIcon from 'assets/images/deleteIcon.svg'
 import UploadFile from "components/UI/uploadFile/UploadFile";
 import Preview from "components/UI/preview/Preview";
-
+import getCurrentDate from "utils/getCurrentDate";
 uuidv4()
 function CreateBlog() {
     const dispatch = useDispatch()
@@ -30,14 +30,6 @@ function CreateBlog() {
     const [descr, setDescr] = useState([]);
     const [images, setImages] = useState([]);
 
-    function getCurrentDate() {
-        let date = new Date()
-        let day = date.getDate();
-        let month = date.toLocaleString('en', { month: 'short' });
-        let year = date.getFullYear();
-
-        return day + ' ' + month + ' ' + year;
-    }
     function getTags() {
         let splittedTags = tags.split(/[' ',.,!,?]/);
 

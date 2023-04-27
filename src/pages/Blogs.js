@@ -10,7 +10,7 @@ import Subtitle from 'components/simple/subtitle/Subtitle'
 function Blogs() {
     const navigate = useNavigate();
     const blogs = useSelector(state => state.blogs)
-
+    
     return <>
         <header className={main.header}>
             <ButtonTransparent onClick={() => navigate('/create-blog')}>Create blog</ButtonTransparent>

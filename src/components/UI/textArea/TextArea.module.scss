@@ -1,3 +1,16 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+
+}
+.error {
+    position: absolute;
+    top: -16px;
+    left: 0;        
+    font-size: 12px;
+    font-weight: 500;
+    color: #e50012;    
+}
 .textarea {
     width: 100%;
     border: 1px solid #E0E0E0;
