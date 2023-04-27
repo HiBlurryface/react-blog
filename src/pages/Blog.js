@@ -101,10 +101,10 @@ function Blog() {
                         <div className={styles.comment__wrapper}>
                             <Subtitle>Your comment</Subtitle>
                             <div className={styles.comments__group}>
-                                <Input placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} validation={validation.name} message='* Required field' />
-                                <Input placeholder="Your Email" value={email} onChange={e => setEmail(e.target.value)} validation={validation.email} message='* Required field' />
+                                <Input placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} />
+                                <Input placeholder="Your Email" value={email} onChange={e => setEmail(e.target.value)} />
                             </div>
-                            <TextArea placeholder="Your comment" value={comment} onChange={e => setComment(e.target.value)} validation={validation.comment} message='* Required field' />
+                            <TextArea placeholder="Your comment" value={comment} onChange={e => setComment(e.target.value)} />
                             <Button onClick={() => addComment(blog.id, blog)}>Add comment</Button>
                         </div>
                     </div>
