@@ -13,7 +13,7 @@ function Blogs() {
     
     return <>
         <header className={main.header}>
-            <ButtonTransparent onClick={() => navigate('/create-blog')}>Create blog</ButtonTransparent>
+            <ButtonTransparent onClick={() => navigate('/react-blog/create-blog')}>Create blog</ButtonTransparent>
         </header>
         <main className={main.body}>
             <Title>Blogs</Title>

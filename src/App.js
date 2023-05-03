@@ -15,7 +15,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route>
-          <Route path="/" element={<Layout />}>
+          <Route path="react-blog/" element={<Layout />}>
             <Route index element={<Blogs />} />
             <Route path="blog/:id" element={<Blog />} />
             <Route path="create-blog" element={<CreateBlog />} />

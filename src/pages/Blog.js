@@ -40,7 +40,7 @@ function Blog() {
 
     function deleteBlog() {
         dispatch(deleteBlogAction(blog.id));
-        navigate('/');
+        navigate('/react-blog/');
     }
     function addComment(id, blog) {
         dispatch(addCommentAction(id, blog, {

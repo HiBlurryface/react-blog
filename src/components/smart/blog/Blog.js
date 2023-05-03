@@ -19,7 +19,7 @@ function Blog({ data }) {
             }
         </div>
         <div className={styles.info}>
-            <NavLink to={`/blog/${data.id}`} className={styles.title}>{data.title}</NavLink>
+            <NavLink to={`blog/${data.id}`} className={styles.title}>{data.title}</NavLink>
             <div className={styles.group}>
                 <p className={styles.date}>{data.date}</p>
                 <ul className={styles.list}>

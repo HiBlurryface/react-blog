@@ -66,7 +66,7 @@ function CreateBlog() {
                 images: images,
                 comments: []
             }))
-            navigate('/')
+            navigate('/react-blog/')
         }
     }
 
