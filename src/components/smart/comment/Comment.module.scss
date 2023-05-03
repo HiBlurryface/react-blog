@@ -1,7 +1,9 @@
 .wrapper {
     display: flex;
     padding-bottom: 32px;
-
+    @media (max-width: 425px) {
+        flex-direction: column;
+    }
     &:not(:last-child) {
         margin-bottom: 32px;
         border-bottom: 1px solid #E0E0E0;
@@ -21,6 +23,9 @@
     background: #f1f1f1;
     flex: 0 0 auto;
     overflow: hidden;
+    @media (max-width: 425px) {
+        margin-bottom: 20px;
+    }
 }
 
 .pic {
@@ -53,4 +58,5 @@
     line-height: 24px;
     color: #8695A4;
     margin-top: 12px;
+    word-wrap: break-word;
 }

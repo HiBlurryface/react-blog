@@ -63,7 +63,8 @@ function CreateBlog() {
                 tags: getTags(),
                 descr: descr,
                 preview: preview,
-                images: images
+                images: images,
+                comments: []
             }))
             navigate('/')
         }

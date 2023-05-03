@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCommentAction, deleteBlogAction } from "store/blogsReducer";
 import getCurrentDate from "utils/getCurrentDate";
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Comment from "components/smart/comment/Comment";
 
 uuidv4()
@@ -27,13 +27,23 @@ function Blog() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [comment, setComment] = useState('')
+    const [emailError, setEmailError] = useState(false)
+
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    useEffect(() => {
+        if (!re.test(String(email.toLowerCase())) && email.length > 0) {
+            setEmailError(true)
+        } else {
+            setEmailError(false)
+        }
+    }, [email])
 
     function deleteBlog() {
         dispatch(deleteBlogAction(blog.id));
         navigate('/');
     }
     function addComment(id, blog) {
-        dispatch(addCommentAction(id,blog, {
+        dispatch(addCommentAction(id, blog, {
             id: uuidv4(),
             name: name,
             email: email,
@@ -44,12 +54,12 @@ function Blog() {
         setEmail('')
         setComment('')
     }
+
     return blog === undefined
         ? <PageNotFound />
         : <>
             <header className={main.header}>
                 <ButtonTransparent onClick={() => deleteBlog()}>Delete blog</ButtonTransparent>
-                <ButtonTransparent>Edit blog</ButtonTransparent>
                 <ButtonBack />
             </header>
             <main className={main.body}>
@@ -91,7 +101,7 @@ function Blog() {
                     <div className={styles.comments}>
                         <div className={styles.comments__wrapper}>
                             <Subtitle>{blog.comments.length} Comments</Subtitle>
-                            {blog.comments === 0
+                            {blog.comments.length === 0
                                 ? <h3 className={styles.comments__subtitle}>Add first comment!</h3>
                                 : blog.comments.map((comment, index) => {
                                     return <Comment comment={comment} key={index} />
@@ -101,11 +111,11 @@ function Blog() {
                         <div className={styles.comment__wrapper}>
                             <Subtitle>Your comment</Subtitle>
                             <div className={styles.comments__group}>
-                                <Input placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} />
-                                <Input placeholder="Your Email" value={email} onChange={e => setEmail(e.target.value)} />
+                                <Input name="name" placeholder="Your nickname" value={name} onChange={e => setName(e.target.value)} />
+                                <Input name="email" placeholder="Your Email" value={email} onChange={e => setEmail(e.target.value)} validation={emailError} message="* Wrong email address" />
                             </div>
                             <TextArea placeholder="Your comment" value={comment} onChange={e => setComment(e.target.value)} />
-                            <Button onClick={() => addComment(blog.id, blog)}>Add comment</Button>
+                            <Button active={name.length > 0 && comment.length > 0 && email.length > 0 && emailError === false} onClick={() => addComment(blog.id, blog)}>Add comment</Button>
                         </div>
                     </div>
                 </div>
