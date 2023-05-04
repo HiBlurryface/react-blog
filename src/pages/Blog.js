@@ -54,7 +54,7 @@ function Blog() {
         setEmail('')
         setComment('')
     }
-
+    
     return blog === undefined
         ? <PageNotFound />
         : <>
@@ -77,9 +77,9 @@ function Blog() {
                             </ul>
                         </div>
                         <p className={styles.header__subtitle}>{blog.subtitle}</p>
-                        <div className={styles.header__img}>
+                        {blog.preview && <div className={styles.header__img}>
                             <img src={blog.preview} alt="" className={styles.header__photo} />
-                        </div>
+                        </div>}
                     </div>
                     <div className={styles.content}>
                         {blog.descr && <div className={styles.content__text}>
@@ -91,9 +91,9 @@ function Blog() {
                             })}
                         </div>}
                         {blog.images && <div className={styles.content__images}>
-                            {blog.images.map((item, index) => {
-                                return <div className={styles.block__img} key={index}>
-                                    <img src={item} alt="" className={styles.block__pic} />
+                            {blog.images.map((item) => {
+                                return item.photo && <div className={styles.block__img} key={item.id}>
+                                    <img src={item.photo} alt="" className={styles.block__pic} />
                                 </div>
                             })}
                         </div>}

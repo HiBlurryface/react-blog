@@ -1,9 +1,9 @@
 import styles from './Input.module.scss'
 
-function Input(props) {
+function Input({name, id, value, onChange, placeholder, validation, message}) {
     return <div className={styles.wrapper}>
-        {props.validation && <span className={styles.error}>{props.message}</span>}
-        <input type="text" className={styles.input} {...props}/>
+        {validation && <span className={styles.error}>{message}</span>}
+        <input type="text" className={styles.input} name={name} id={id} value={value} onChange={onChange} placeholder={placeholder}/>
     </div>
 }
 
