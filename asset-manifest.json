@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-blog/static/css/main.2592abfd.css",
-    "main.js": "/react-blog/static/js/main.920efb5b.js",
+    "main.css": "/react-blog/static/css/main.2c36f8cd.css",
+    "main.js": "/react-blog/static/js/main.17764f99.js",
     "static/js/787.9e0c1f39.chunk.js": "/react-blog/static/js/787.9e0c1f39.chunk.js",
     "static/media/blog1_1.jpg": "/react-blog/static/media/blog1_1.4326cb91e890da0610c8.jpg",
     "static/media/blog1_2.jpg": "/react-blog/static/media/blog1_2.7e7c7e99e76d7d383eb6.jpg",
@@ -20,12 +20,12 @@
     "index.html": "/react-blog/index.html",
     "static/media/linkedin-icon.svg": "/react-blog/static/media/linkedin-icon.05ad1948f9e4becd70e323c2cf6089bc.svg",
     "static/media/telegram-icon.svg": "/react-blog/static/media/telegram-icon.6c3b6e7b044bd32fb1f3e45be3175676.svg",
-    "main.2592abfd.css.map": "/react-blog/static/css/main.2592abfd.css.map",
-    "main.920efb5b.js.map": "/react-blog/static/js/main.920efb5b.js.map",
+    "main.2c36f8cd.css.map": "/react-blog/static/css/main.2c36f8cd.css.map",
+    "main.17764f99.js.map": "/react-blog/static/js/main.17764f99.js.map",
     "787.9e0c1f39.chunk.js.map": "/react-blog/static/js/787.9e0c1f39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2592abfd.css",
-    "static/js/main.920efb5b.js"
+    "static/css/main.2c36f8cd.css",
+    "static/js/main.17764f99.js"
   ]
 }
