@@ -25,7 +25,7 @@ function Blog({ data }) {
                 <ul className={styles.list}>
                     {data.tags.map((tag, index) => {
                         return <li className={styles.item} key={index}>
-                            <a href="" className={styles.tag}>{tag}</a>
+                            {tag}
                         </li>
                     })}
                 </ul>
