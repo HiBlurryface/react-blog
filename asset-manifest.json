@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/react-blog/static/css/main.2592abfd.css",
+    "main.js": "/react-blog/static/js/main.920efb5b.js",
+    "static/js/787.9e0c1f39.chunk.js": "/react-blog/static/js/787.9e0c1f39.chunk.js",
+    "static/media/blog1_1.jpg": "/react-blog/static/media/blog1_1.4326cb91e890da0610c8.jpg",
+    "static/media/blog1_2.jpg": "/react-blog/static/media/blog1_2.7e7c7e99e76d7d383eb6.jpg",
+    "static/media/blog1_3.jpg": "/react-blog/static/media/blog1_3.c6898f998ad092e9b760.jpg",
+    "static/media/camera.png": "/react-blog/static/media/camera.623f903c0fa2a370295a.png",
+    "static/media/Heebo-Black.ttf": "/react-blog/static/media/Heebo-Black.98dd262891719b8b4276.ttf",
+    "static/media/Heebo-ExtraBold.ttf": "/react-blog/static/media/Heebo-ExtraBold.027b2d0d4056be6525ef.ttf",
+    "static/media/Heebo-Bold.ttf": "/react-blog/static/media/Heebo-Bold.a7c705793c3c00f11242.ttf",
+    "static/media/Heebo-SemiBold.ttf": "/react-blog/static/media/Heebo-SemiBold.575d913cf7b76c7fa41c.ttf",
+    "static/media/Heebo-Medium.ttf": "/react-blog/static/media/Heebo-Medium.7ce8ba479cf83916ecea.ttf",
+    "static/media/Heebo-Light.ttf": "/react-blog/static/media/Heebo-Light.81b8083bf3a45d2b5559.ttf",
+    "static/media/Heebo-Regular.ttf": "/react-blog/static/media/Heebo-Regular.4dbbe613d25d93d40f37.ttf",
+    "static/media/user.png": "/react-blog/static/media/user.3c70c6dd4c2f7d7e6286.png",
+    "static/media/deleteIcon.svg": "/react-blog/static/media/deleteIcon.061cceedd8160e29f24385b8a7b3304f.svg",
+    "static/media/instagram-icon.svg": "/react-blog/static/media/instagram-icon.3d68c46cfdb30a63df12cfd1e23c9a94.svg",
+    "index.html": "/react-blog/index.html",
+    "static/media/linkedin-icon.svg": "/react-blog/static/media/linkedin-icon.05ad1948f9e4becd70e323c2cf6089bc.svg",
+    "static/media/telegram-icon.svg": "/react-blog/static/media/telegram-icon.6c3b6e7b044bd32fb1f3e45be3175676.svg",
+    "main.2592abfd.css.map": "/react-blog/static/css/main.2592abfd.css.map",
+    "main.920efb5b.js.map": "/react-blog/static/js/main.920efb5b.js.map",
+    "787.9e0c1f39.chunk.js.map": "/react-blog/static/js/787.9e0c1f39.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2592abfd.css",
+    "static/js/main.920efb5b.js"
+  ]
+}
